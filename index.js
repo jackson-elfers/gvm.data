@@ -34,9 +34,9 @@ async function migrate() {
     const media = await getMedia({ parent_id: response.data.data[i]._id });
     temp.push(media);
     // download images
-    for(var i = 0; i < media.length; ++i) {
-      console.log(`image ${i}`);
-      await downloadFile(media[i]);
+    for(var c = 0; c < media.length; ++c) {
+      console.log(`image ${c}`);
+      await downloadFile(media[c]);
     }
   }
   fs.writeFile('gvm.image.data.json', JSON.stringify(temp), function (err) {
